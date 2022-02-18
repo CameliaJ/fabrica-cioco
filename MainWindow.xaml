@@ -1,0 +1,54 @@
+﻿<Window x:Name="frmMain" x:Class="fabrica_cioco.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:fabrica_cioco"
+        mc:Ignorable="d"
+        Title="Fabrica de ciocolata" Height="450" Width="800" IsEnabled="False" ResizeMode="NoResize" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}">
+    <Grid Height="450" Width="800" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="32*"/>
+            <ColumnDefinition Width="365*"/>
+        </Grid.ColumnDefinitions>
+        <Canvas HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Margin="75,89,0,0" Grid.Column="2"/>
+        <Label Content="FABRICA DE CIOCOLATA" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="181,10,278.6,0" Width="270" Height="40" FontWeight="Bold" FontSize="22" FontStyle="Italic" Grid.Column="2"/>
+        <GroupBox x:Name="gbTip_de_ciocolata" Header="Tip de ciocolata" HorizontalAlignment="Left" Height="139" VerticalAlignment="Top" Width="191" Margin="38,77,0,0" FontSize="14" FontWeight="Bold" Grid.Column="2">
+            <Canvas Margin="0" Width="160" Height="110">
+                <Label Content="Amaruie" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="10" Canvas.Top="10" Background="{x:Null}"/>
+                <TextBox x:Name="txtAmaruie" Height="22" TextWrapping="Wrap" Text="0" Width="60" Canvas.Left="90" Canvas.Top="13" AutomationProperties.Name="Amaruie" IsReadOnly="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                <Label Content="Lapte" Canvas.Left="10" Canvas.Top="43" AutomationProperties.Name="Lapte" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBox x:Name="txtLapte" Height="22" TextWrapping="Wrap" Text="0" Width="60" Canvas.Left="90" Canvas.Top="43" AutomationProperties.Name="Lapte" IsReadOnly="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                <Label Content="Alba" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="10" Canvas.Top="72" AutomationProperties.Name="Alba"/>
+                <TextBox x:Name="txtAlba" Height="22" TextWrapping="Wrap" Text="0" Width="60" Canvas.Left="90" Canvas.Top="72" TextChanged="TextBox_TextChanged" IsReadOnly="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            </Canvas>
+        </GroupBox>
+        <GroupBox x:Name="gbUmplutura" Header="Umplutura" HorizontalAlignment="Left" Height="139" VerticalAlignment="Top" Width="300" Margin="290,77,0,0" FontWeight="Bold" FontSize="14" Grid.Column="2">
+            <Canvas Height="110" Width="270" Margin="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Label x:Name="lblArahide" Content="Arahide" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="10" Canvas.Top="10"/>
+                <Label x:Name="lblCaramel" Content="Caramel" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="10" Canvas.Top="38"/>
+                <Label x:Name="lblLichior" Content="Lichior" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="10" Canvas.Top="67"/>
+                <TextBox x:Name="txtUmpluturaArahide" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" Canvas.Left="118" Canvas.Top="10" IsReadOnly="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                <TextBox x:Name="txtUmpluturaCaramel" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" Canvas.Left="118" Canvas.Top="38" IsReadOnly="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                <TextBox x:Name="txtUmpluturaLichior" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" Canvas.Left="118" Canvas.Top="68" IsReadOnly="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            </Canvas>
+        </GroupBox>
+        <GroupBox x:Name="gbVanzari" Header="Vanzari" HorizontalAlignment="Left" Height="190" VerticalAlignment="Top" Width="552" Margin="38,221,0,0" FontWeight="Bold" FontSize="14" FontStretch="SemiCondensed" Grid.Column="2">
+            <Canvas HorizontalAlignment="Center" Height="160" VerticalAlignment="Center" Width="530">
+                <Label x:Name="lblCantitate" Content="Cantitate" HorizontalAlignment="Center" VerticalAlignment="Center" Canvas.Left="0" Canvas.Top="10" Background="{x:Null}" Foreground="Black" FontStretch="Normal"/>
+                <Label x:Name="lblTip_de_ciocolata" Content="Tip de ciocolata" HorizontalAlignment="Center" VerticalAlignment="Center" Canvas.Left="154" Canvas.Top="10" Background="{x:Null}" Foreground="Black" FontStretch="Normal"/>
+                <Label x:Name="lblPret" Content="Pret" HorizontalAlignment="Center" VerticalAlignment="Center" Canvas.Left="395" Canvas.Top="10" Background="{x:Null}" Foreground="Black" FontStretch="Normal"/>
+                <TextBox x:Name="txtCantitate" Height="22" TextWrapping="Wrap" Text="0" Width="80" Canvas.Left="70" Canvas.Top="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBox x:Name="txtPret" Height="22" TextWrapping="Wrap" Text="0" Width="80" Canvas.Left="440" Canvas.Top="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <ComboBox x:Name="cmbTip_de_ciocolata" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" Canvas.Left="270" Canvas.Top="12"/>
+                <ListBox x:Name="lstVanzari" HorizontalAlignment="Left" Height="70" VerticalAlignment="Top" Width="380" Canvas.Left="10" Canvas.Top="40"/>
+                <Label x:Name="lblTotal" Content="Total" Canvas.Left="154" Canvas.Top="115" HorizontalAlignment="Center" VerticalAlignment="Center" FontStretch="Normal" Foreground="White"/>
+                <TextBox x:Name="txtTotal" HorizontalAlignment="Center" Height="22" TextWrapping="Wrap" Text="0" VerticalAlignment="Center" Width="120" Canvas.Left="270" Canvas.Top="120" TextChanged="TextBox_TextChanged_1" IsReadOnly="True"/>
+                <Button x:Name="btnAdauga_in_cos" Content="Adauga in cos" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Canvas.Left="420" Canvas.Top="40" FontStretch="ExtraCondensed" Foreground="Black" FontWeight="Normal"/>
+                <Button x:Name="btnSterge_produsul" Content="Sterge produsul" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Canvas.Left="420" Canvas.Top="67" FontStretch="ExtraCondensed" Foreground="Black" FontWeight="Normal"/>
+                <Button x:Name="btnFinalizare_comanda" Content="Finalizare comanda" HorizontalAlignment="Center" VerticalAlignment="Center" Width="125" Canvas.Left="395" Canvas.Top="94" FontStretch="ExtraCondensed" Foreground="Black" Height="50" Click="btnFinalizare_comanda_Click" FontSize="12" FontWeight="ExtraBold"/>
+            </Canvas>
+        </GroupBox>
+    </Grid>
+</Window>
